@@ -1,3 +1,7 @@
 *{margin: 0 auto; padding: 0;}
-p {color: azure; background-color: black; height: 100px;}
-#show_text {text-align: center; font-size: 20px; line-height: 100px; }
+p {color: azure; }
+.top-text {background-color: black; height: 100px; line-height: 100px;}
+#show_text {text-align: center; font-size: 20px; }
+
+.bottom-text {background-color: gray; height: 100px; }
+#show_text_below {text-align: center; font-size: 20px; line-height: 100px;}
