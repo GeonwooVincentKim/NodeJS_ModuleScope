@@ -1,4 +1,18 @@
+const $result = document.querySelector(".result");
+const render = content => {
+    $result.textContent = JSON.stringify(content, null, 2);
+    /*$result.innerHTML = `
+        <div class="result_list">
+            <div class="list_body">
+               ${JSON.stringify(content, null, 2)}
+            </div>
+        </div>
+    `*/
 
+    console.log($result.textContent);
+    // console.log($result.textContent(res).get(1));
+};
+console.log(render);
 
 const promiseAJAX = (method, url, payload) => {
     return new Promise((resolve, reject) => {
@@ -24,22 +38,6 @@ const promiseAJAX = (method, url, payload) => {
         }
     });
 }
-
-const $result = document.querySelector(".result");
-const render = content => {
-    $result.textContent = JSON.stringify(content, null, 2);
-    /*$result.innerHTML = `
-        <div class="result_list">
-            <div class="list_body">
-               ${JSON.stringify(content, null, 2)}
-            </div>
-        </div>
-    `*/
-
-    console.log($result.textContent);
-    // console.log($result.textContent(res).get(1));
-};
-console.log(render);
 
 const url = 'http://jsonplaceholder.typicode.com/posts';
 
