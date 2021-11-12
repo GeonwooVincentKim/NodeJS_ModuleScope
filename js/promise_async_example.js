@@ -1,6 +1,6 @@
 const $result = document.querySelector(".result");
 const render = content => { $result.textContent = JSON.stringify(content, null, 2);};
-// console.log(render);
+console.log(render);
 
 const promiseAJAX = (method, url, payload) => {
     return new Promise((resolve, reject) => {
