@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var pVector = function(x, y){
+                this.x = x;
+                this.y = y;
+            };
+
+            pVector.prototype.add = function(v){
+                this.y = this.y + v.y;
+                this.x = this.x + v.x;
+            }
+
+            var position = new pVector(100, 100);
+            var speed = new pVector(2, 5);
+
+            var draw = function() {
+                background(255, 255, 255);
+                
+                position.add(speed);
+                
+                // We still sometimes need to refer to the individual components of a PVector and can do so using the dot syntax: location.x, velocity.y, etc.
+                if ((position.x > width) || (position.x < 0)) {
+                    speed.x = speed.x * -1;
+                }
+                if ((position.y > height) || (position.y < 0)) {
+                    speed.y = speed.y * -1;
+                }
+                
+                noStroke();
+                fill(179, 179, 179);
+                ellipse(position.x, position.y, 16, 16);
+            };
+        </script>
+    </body>
+</html>
